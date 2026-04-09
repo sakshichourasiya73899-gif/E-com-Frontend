@@ -45,7 +45,7 @@ const Footer = () => {
           {/* Brand & Contact */}
           <div className="lg:col-span-1">
             <h2 className="text-2xl font-bold gradient-primary bg-clip-text text-transparent mb-4">
-              ShopMate
+              Flowmerce
             </h2>
             <p className="text-muted-foreground mb-6">
               Your trusted partner for online shopping. Discover amazing
@@ -54,7 +54,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-muted-foreground">
                 <Mail className="w-5 h-5 text-primary" />
-                <span>support@shopmate.com</span>
+                <span>support@flowmerce.com</span>
               </div>
               <div className="flex items-center space-x-3 text-muted-foreground">
                 <Phone className="w-5 h-5 text-primary" />

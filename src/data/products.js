@@ -36,7 +36,7 @@ export const categories = [
   },
   {
     id: "8",
-    name: "Kids & Baby",
+    name: "Kids",
     image: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=300",
   },
 ];

@@ -9,7 +9,18 @@ const popupSlice = createSlice({
     isCartOpen: false,
     isAIPopupOpen: false,
   },
-  reducers: {},
+  reducers: {
+    toggleAuthPopup(state){
+      state.isAIPopupOpen=!state.isAuthPopupOpen;
+    },
+    toggleSidebar(state){
+      state.isSidebarOpen=!state.isSidebarOpen
+    },
+  
+    toggleAIModal(state){
+      state.isAIPopupOpen=!state.isAIPopupOpen
+    }
+  },
 });
 
 export const {
