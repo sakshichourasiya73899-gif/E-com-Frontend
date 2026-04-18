@@ -19,6 +19,15 @@ const popupSlice = createSlice({
   
     toggleAIModal(state){
       state.isAIPopupOpen=!state.isAIPopupOpen
+<<<<<<< HEAD
+=======
+    },
+    toggleSearchBar(state){
+      state.isSearchBarOpen=!state.isSearchBarOpen
+    },
+    toggleCart(state){
+      state.isCartOpen=!state.isCartOpen
+>>>>>>> f4878f1 (cart and login Panel)
     }
   },
 });

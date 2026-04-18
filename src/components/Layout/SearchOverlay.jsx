@@ -14,9 +14,15 @@ const SearchOverlay = () => {
 
   const handleSearch = () => {
     if(searchQuery.trim() !==""){
+<<<<<<< HEAD
      
       navigate(`/products?search=${encodeURIComponent(searchQuery)}`);
        dispatch(toggleSearchBar());
+=======
+       dispatch(toggleSearchBar());
+      navigate(`/products?search=${encodeURIComponent(searchQuery)}`);
+      
+>>>>>>> f4878f1 (cart and login Panel)
 
     }
   }
@@ -47,9 +53,19 @@ const SearchOverlay = () => {
                 </button>
                 <input type="text" placeholder="search for products...." value={searchQuery} onChange={(e)=>
                   setSearchQuery(e.target.value)} onKeyDown={(e)=>e.key==="Enter" && handleSearch()}
+<<<<<<< HEAD
                   className="w-full pl-12 pr-4 py-4 bg-secondary border border-border rounded-lg focus:outline-none text-foreground placeholder:muted-foreground"
                  />
               </div>
+=======
+                  className="w-full pl-12 pr-4 py-4 bg-secondary border border-border rounded-lg focus:outline-none text-foreground placeholder:text-muted-foreground"
+                  autoFocus
+                 />
+              </div>
+              <div className="mt-6 text-center text-muted-foreground">
+                <p>Start typing to search for products.....</p>
+              </div>
+>>>>>>> f4878f1 (cart and login Panel)
             </div>
           </div>
         </div>
