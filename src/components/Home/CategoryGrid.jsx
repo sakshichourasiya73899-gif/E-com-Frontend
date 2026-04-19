@@ -17,7 +17,7 @@ const CategoryGrid = () => {
           <Link
             key={category.id}
             to={`/products?category=${category.name}`}
-            className="group glass-card p-6 text-center hover:glow-on-hover animate-smooth"
+            className="group glass-card p-6 text-center hover:glow-on-hover animate-smooth transition-transform duration-300"
           >
             <div className="relative overflow-hidden rounded-lg mb-4">
               <img
