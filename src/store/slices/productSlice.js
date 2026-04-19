@@ -31,9 +31,9 @@ export const fetchProductDetails = createAsyncThunk("product/singleProduct", asy
 });
 export const PostReview = createAsyncThunk("product/post-new/review", async ({ productId, review }, thunkAPI) => {
   try {
-    const res = await axiosInstance.put(`/product/post-new/review${productId}`, review);
+    const res = await axiosInstance.put(`/product/post-new/review/${productId}`, review);
     toast.success(res.data.message)
-    return response.data.review;
+    return res.data.review;
   }
   catch (error) {
     toast.error(error.response.data.message) || "fialed to fetch post review";
@@ -42,7 +42,7 @@ export const PostReview = createAsyncThunk("product/post-new/review", async ({ p
 });
 export const deleteReview = createAsyncThunk("product/delete/review", async ({ productId, reviewId }, thunkAPI) => {
   try {
-    const res = await axiosInstance.delete(`/product/delete/review${productId}`);
+    const res = await axiosInstance.delete(`/product/delete/review/${productId}`);
     toast.success(res.data.message)
     return reviewId;
 
@@ -99,7 +99,7 @@ const productSlice = createSlice({
       .addCase(fetchProductDetails.fulfilled, (state, action) => {
         state.loading = false;
         state.productDetails = action.payload;
-        state.productDetails = action.payload.reviews;
+        state.productReviews = action.payload.reviews;
 
 
       })
