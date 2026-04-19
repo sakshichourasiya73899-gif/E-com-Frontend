@@ -1,6 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { ToastContainer } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { Loader } from "lucide-react";
+import { useEffect } from "react";
+import { getUser } from "./store/slices/authSlice";
+
 
 // Layout Components
 import Navbar from "./components/Layout/Navbar";
@@ -10,6 +15,7 @@ import CartSidebar from "./components/Layout/CartSidebar";
 import ProfilePanel from "./components/Layout/ProfilePanel";
 import LoginModal from "./components/Layout/LoginModal";
 import Footer from "./components/Layout/Footer";
+import { fetchAllProducts } from "./store/slices/productSlice";
 
 // Pages
 import Index from "./pages/Home";
@@ -22,8 +28,35 @@ import About from "./pages/About";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import { useSelector } from "react-redux";
 
 const App = () => {
+  const { authUser, isCheckingAuth } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getUser());
+  }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchAllProducts({
+      category: "",
+      price: `1-10000`,
+      search: "",
+      ratings: "",
+      availability: "",
+      page: 1,
+    }));
+  }, []);
+  const { products } = useSelector((state) => state.product)
+
+  if ((isCheckingAuth && !authUser) || !products) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary">
+          <Loader className="size-10 animate-spin" />
+        </div>
+      </div>
+    )
+  }
   return (
     <>
       <ThemeProvider>

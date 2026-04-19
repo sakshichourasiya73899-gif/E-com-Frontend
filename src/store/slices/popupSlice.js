@@ -10,24 +10,23 @@ const popupSlice = createSlice({
     isAIPopupOpen: false,
   },
   reducers: {
-    toggleAuthPopup(state){
-      state.isAIPopupOpen=!state.isAuthPopupOpen;
+    toggleAuthPopup(state) {
+      state.isAuthPopupOpen = !state.isAuthPopupOpen;
     },
-    toggleSidebar(state){
-      state.isSidebarOpen=!state.isSidebarOpen
+    toggleSidebar(state) {
+      state.isSidebarOpen = !state.isSidebarOpen
     },
-  
-    toggleAIModal(state){
-      state.isAIPopupOpen=!state.isAIPopupOpen
-<<<<<<< HEAD
-=======
+
+    toggleAIModal(state) {
+      state.isAIPopupOpen = !state.isAIPopupOpen
+
     },
-    toggleSearchBar(state){
-      state.isSearchBarOpen=!state.isSearchBarOpen
+    toggleSearchBar(state) {
+      state.isSearchBarOpen = !state.isSearchBarOpen
     },
-    toggleCart(state){
-      state.isCartOpen=!state.isCartOpen
->>>>>>> f4878f1 (cart and login Panel)
+    toggleCart(state) {
+      state.isCartOpen = !state.isCartOpen
+
     }
   },
 });
