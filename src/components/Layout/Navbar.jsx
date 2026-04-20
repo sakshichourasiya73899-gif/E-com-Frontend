@@ -33,22 +33,22 @@ const Navbar = () => {
 
           {/* CENTER LOGO */}
           {/* CENTER LOGO */}
-         <div className="absolute left-1/2 transform -translate-x-1/2 pointer-events-none">
-  <h1 className=" sm:text-xl text-3xl md:text-4xl font-display font-bold tracking-wide text-foreground relative group cursor-pointer">
+          <div className="absolute left-1/2 transform -translate-x-1/2 pointer-events-none">
+            <h1 className=" sm:text-xl text-3xl md:text-4xl font-display font-bold tracking-wide text-foreground relative group cursor-pointer">
 
-    {/* subtle glow */}
-    <span className="absolute inset-0 bg-foreground blur-md opacity-10 group-hover:opacity-25 transition duration-500"></span>
+              {/* subtle glow */}
+              <span className="absolute inset-0 bg-foreground blur-md opacity-10 group-hover:opacity-25 transition duration-500"></span>
 
-    {/* main text */}
-    <span className="relative">
-      Flowmerce
-    </span>
+              {/* main text */}
+              <span className="relative">
+                Flowmerce
+              </span>
 
-    {/* underline */}
-    <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-foreground group-hover:w-full transition-all duration-500"></span>
+              {/* underline */}
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-foreground group-hover:w-full transition-all duration-500"></span>
 
-  </h1>
-</div>
+            </h1>
+          </div>
           {/* RIGHT SIDE */}
           <div className="flex items-center space-x-1 sm:space-x-2 md:space-x-3">
 
@@ -88,7 +88,7 @@ const Navbar = () => {
               <ShoppingCart className="w-5 h-5 text-foreground" />
 
               {cartItemsCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center shadow-md">
+                <span className="absolute -top-1 -right-1 bg-blue-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
                   {cartItemsCount}
                 </span>
               )}

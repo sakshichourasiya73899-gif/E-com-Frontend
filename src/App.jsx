@@ -83,7 +83,10 @@ const App = () => {
             </Routes>
             <Footer />
           </div>
-          <ToastContainer />
+          <ToastContainer
+            position="bottom-right"
+            autoClose={2000}
+            theme="dark" />
         </BrowserRouter>
       </ThemeProvider>
     </>

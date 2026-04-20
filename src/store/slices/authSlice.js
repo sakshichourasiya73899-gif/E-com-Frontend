@@ -41,8 +41,8 @@ export const login = createAsyncThunk("auth/login", async (data, thunkAPI) => {
 export const getUser = createAsyncThunk("auth/me", async (data, thunkAPI) => {
   try {
     const res = await axiosInstance.get("/auth/me", data)
-    toast.success(res.data.message),
-      thunkAPI.dispatch(toggleAuthPopup())
+    // toast.success(res.data.message),
+    //thunkAPI.dispatch(toggleAuthPopup())
     return res.data.user
 
   }
@@ -56,7 +56,7 @@ export const logout = createAsyncThunk("auth/logout", async (data, thunkAPI) => 
   try {
     const res = await axiosInstance.get("/auth/logout", data)
 
-    thunkAPI.dispatch(toggleAuthPopup(toggleAuthPopup()));
+    thunkAPI.dispatch(toggleAuthPopup());
     return null;
 
   }
@@ -175,7 +175,7 @@ const authSlice = createSlice({
       })
       .addCase(getUser.pending, (state) => {
         state.isCheckingAuth = true;
-        state.authUser = null;
+        //state.authUser = null;
       })
       .addCase(getUser.fulfilled, (state, action) => {
         state.isCheckingAuth = false;
@@ -186,7 +186,8 @@ const authSlice = createSlice({
         state.authUser = null;
       })
       .addCase(logout.fulfilled, (state, action) => {
-        state.authUser = {};
+        state.authUser = null;
+
       })
       .addCase(logout.rejected, (state, action) => {
         state.isCheckingAuth = false;
