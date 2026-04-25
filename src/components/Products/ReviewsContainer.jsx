@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { PostReview, deleteReview } from "../../store/slices/productSlice";
 import { Star } from "lucide-react";
 
 
 const ReviewsContainer = ({ product, productReviews }) => {
   const { authUser } = useSelector((state) => state.auth);
-  const { isReviewDeleting, isPostingReview } = useSelector((state) => state.review);
+  const { isReviewDeleting, isPostingReview } = useSelector((state) => state.product);
   const dispatch = useDispatch();
   const [rating, setRating] = useState(1);
   const [comment, setComment] = useState("");
@@ -29,9 +30,9 @@ const ReviewsContainer = ({ product, productReviews }) => {
                     key={i}
                     type="button"
                     onClick={() => setRating(i + 1)}
-                    className={`w-10 h-10 text-2xl rounded-full flex items-center justify-center transition-colors ${i < rating ? "bg-yellow-500" : "bg-gray-300"}`}
+                    className="transition-all duration-150 hover:scale-110"
                   >
-                    <Star className={`w-5 h-5 ${i < rating ? "fill-current text-white" : "text-gray-500"}`} />
+                    <Star className={`w-6 h-6 transition-colors duration-150 ${i < rating ? "fill-yellow-400 text-yellow-400 drop-shadow-[0_0_6px_rgba(250,204,21,0.8)]" : "fill-transparent text-gray-600 hover:text-yellow-400/40"}`} />
                   </button>
                 )
               })
@@ -44,7 +45,7 @@ const ReviewsContainer = ({ product, productReviews }) => {
             placeholder="Write your review..."
             className="w-full p-3 border border-border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary"
           />
-          <button type="submit" disabled={isPostingReview} className="px-6 py-2 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors disabled:opacity-50">
+          <button type="submit" disabled={isPostingReview} className="px-8 py-2.5 rounded-lg font-semibold text-sm tracking-wider transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed bg-gradient-to-r from-[#c9a96e] to-[#e8c98a] text-gray-900 hover:shadow-[0_0_20px_rgba(201,169,110,0.35)] hover:-translate-y-0.5 active:translate-y-0">
             {isPostingReview ? "Posting..." : "Post Review"}
           </button>
         </form>
