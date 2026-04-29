@@ -9,9 +9,14 @@ const extraSlice = createSlice({
     isCreateProductModalOpened: false,
     isUpdateProductModalOpened: false,
   },
-  reducers: {},
+  reducers: {
+    toggleComponent: (state, action) => { },
+    toggleNavbar: (state, action) => { },
+    toggleNavbar: (state, action) => { },
+    toggleNavbar: (state, action) => { },
+  },
 });
 
-export const {} = extraSlice.actions;
+export const { } = extraSlice.actions;
 
 export default extraSlice.reducer;
