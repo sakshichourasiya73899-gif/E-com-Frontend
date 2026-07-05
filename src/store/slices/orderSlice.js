@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { axiosInstance } from "../../lib/axios";
 import { toast } from "react-toastify";
@@ -65,3 +66,19 @@ const orderSlice = createSlice({
 
 export default orderSlice.reducer;
 export const { toggleOrderStep } = orderSlice.actions;
+=======
+import { createSlice } from "@reduxjs/toolkit";
+
+const orderSlice = createSlice({
+  name: "order",
+  initialState: {
+    loading: false,
+    orders: [],
+    error: null,
+  },
+  reducers: {},
+  extraReducers: (builder) => {},
+});
+
+export default orderSlice.reducer;
+>>>>>>> 701e9bf349e789c5991dcb89f0a7b70b67dca075

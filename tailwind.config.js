@@ -1,8 +1,10 @@
 import animate from "tailwindcss-animate";
 
-module.exports = {
+/** @type {import('tailwindcss').Config} */
+export default {
   darkMode: ["class"],
   content: [
+    "./index.html",
     "./pages/**/*.{js,jsx,ts,tsx}",
     "./components/**/*.{js,jsx,ts,tsx}",
     "./app/**/*.{js,jsx,ts,tsx}",
@@ -63,6 +65,11 @@ module.exports = {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+      backgroundImage: {
+        "dark-gradient": "linear-gradient(195deg, #42424a, #191919)",
+        "red-gradient": "linear-gradient(195deg, #e25656, #ff0000)",
+        "blue-gradient": "linear-gradient(195deg, #6fc7ce, #004cff)",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -70,20 +77,12 @@ module.exports = {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {
