@@ -1,12 +1,7 @@
-<<<<<<< HEAD
-=======
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
->>>>>>> 701e9bf349e789c5991dcb89f0a7b70b67dca075
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-<<<<<<< HEAD
 /* Modern E-commerce Design System with Glassmorphism */
 
 @layer base {
@@ -267,28 +262,4 @@
   .animate-fade-in-up {
     animation: fadeInUp 0.6s ease-out;
   }
-=======
-* {
-  font-family: "Ubuntu", sans-serif;
-  font-style: normal;
-  /* font-optical-sizing: auto; */
-  overflow-x: hidden;
-  box-sizing: border-box;
-}
-
-#root {
-  background: #f3f3f6;
-}
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-
-.scrollbar-hide {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-.recharts-wrapper .recharts-surface:focus,
-.recharts-wrapper .recharts-surface:hover {
-  outline: none !important;
->>>>>>> 701e9bf349e789c5991dcb89f0a7b70b67dca075
 }
